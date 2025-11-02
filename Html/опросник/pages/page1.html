@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Опросник ФБКИ</title>
+    <link rel="stylesheet" type="text/css" href="../css/css.css">
+</head>
+<body>
+    <h1>Опросник ФБКИ</h1>
+    <form action="#" method="get" oninput="forrange.value=range.value">
+        <div>
+            <label>ФИО</label>
+            <input type="text" required placeholder="Введите ФИО">
+        </div>
+        <label class="block-example">Направление подготовки</label>
+        <select name="specialization">
+            <option value="informatics">Прикладная информатика</option>
+            <option value="advertising">Реклама и связи с общественностью</option>
+            <option value="hr">Управление персоналом</option>
+            <option value="service">Сервис</option>
+            <option value="tourism">Туризм</option>
+            <option value="masters_economics">Экономика (магистратура)</option>
+            <option value="masters_hr">Управление персоналом (магистратура)</option>
+            <option value="masters_informatics">Прикладная информатика (магистратура)</option>
+            <option value="other">Другое</option>
+        </select>
+        <div>
+            <label>Ваш возраст?</label>
+            <div>
+                <input type="radio" name="age" value="1" id="age18">
+                <label for="age18">17–20 лет</label>
+            </div>
+            <div>
+                <input type="radio" name="age" value="2" id="age21">
+                <label for="age21">21–23 лет</label>
+            </div>
+            <div>
+                <input type="radio" name="age" value="3" id="age24">
+                <label for="age24">24–26 лет</label>
+            </div>
+            <div>
+                <input type="radio" name="age" value="4" id="age27">
+                <label for="age27">27 и старше</label>
+            </div>
+        </div>
+        <div>
+            <label>Питаетесь ли вы в столовой?</label>
+            <div>
+                <input type="radio" name="cafeteria" value="yes" id="cafeteriaYes">
+                <label for="cafeteriaYes">Да</label>
+            </div>
+            <div>
+                <input type="radio" name="cafeteria" value="no" id="cafeteriaNo">
+                <label for="cafeteriaNo">Нет</label>
+            </div>
+        </div>
+        <div>
+            <label>Как вы оцениваете качество еды в столовой?</label>
+            <div>
+                <input type="radio" name="food_rating" value="excellent" id="excellent">
+                <label for="excellent">Отлично</label>
+            </div>
+            <div>
+                <input type="radio" name="food_rating" value="good" id="good">
+                <label for="good">Хорошо</label>
+            </div>
+            <div>
+                <input type="radio" name="food_rating" value="average" id="average">
+                <label for="average">Удовлетворительно</label>
+            </div>
+            <div>
+                <input type="radio" name="food_rating" value="poor" id="poor">
+                <label for="poor">Плохо</label>
+            </div>
+        </div>
+        <div>
+            <input type="checkbox" id="projects" checked>
+            <label for="projects">Участвую в студенческих проектах</label>
+        </div>
+        <div>
+            <label>Какие улучшения вы бы внесли в учебный процесс?</label>
+            <textarea rows="6" cols="50" placeholder="Напишите здесь..."></textarea>
+        </div>
+        <div>
+            <label>Оцените качество преподавания (10 — отлично)</label>
+            <div>
+                <label>1</label>
+                <input type="range" min="1" max="10" value="5" id="range">
+                <label>10</label>
+            </div>
+            <output name="forrange" id="output">5</output>
+        </div>
+        <input type="submit" value="Отправить">
+    </form>
+</body>
+</html>Ы

@@ -1,0 +1,77 @@
+body {
+  font-size: 24pt;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+  border-bottom: 2px solid #333;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo {
+  font-weight: bold;
+  color: #2c3e50;
+  white-space: nowrap;
+}
+
+.promo {
+  margin-left: auto;
+  color: #e74c3c;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.main-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  gap: 10px;
+}
+
+.main-menu > li {
+  margin: 0;
+  padding: 15px 20px;
+  background-color: beige;
+  position: relative;
+  cursor: pointer;
+}
+
+.main-menu > li::before {
+  content: "\2645";
+  color: red;
+  margin-right: 8px;
+}
+
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  background-color: white;
+  border: 1px solid #aaa;
+  padding: 10px;
+  min-width: 200px;
+  z-index: 10;
+}
+
+.sub-menu li {
+  padding: 8px 0;
+  background: none;
+  border: none;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.main-menu li:hover > .sub-menu {
+  display: block;
+}
