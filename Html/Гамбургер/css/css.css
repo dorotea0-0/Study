@@ -1,0 +1,116 @@
+body{
+    background-color: antiquewhite;
+    font-size: 24px;
+    font-family: sans-serif;
+    color: red;
+}
+.main-menu{
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    padding: 10px;
+    padding-left: 30px;
+    list-style: none;
+    background-color: blue;
+    left: -100%;
+    visibility: hidden;
+    transition: 1s;
+}
+#ham-check{
+    opacity: 0;
+}
+.hum-button{
+    display: block;
+    position: relative;
+    width: 30px;
+    height:30px;
+}
+.hum-button>span,
+.hum-button>span::before,
+.hum-button>span::after{
+    display: block;
+    position: absolute;
+    width: 30px;
+    height: 6px;
+    background-color: maroon;
+}
+.hum-button>span{
+    transition: 1s;
+}
+.hum-button>span::before{
+    transition: 1s;
+    top: -10px;
+    content: "";
+}
+.hum-button>span::after{
+    transition: 1s;
+    top: 10px;
+    content:"";
+}
+#ham-check:checked ~ .main-menu{
+    left: 0;
+    visibility: visible;
+    transition-duration: 1s;
+}
+#ham-check:checked + .hum-button > span::before {
+    transition: 1s;
+    transform: rotate(45deg); 
+    top: 0;
+}
+#ham-check:checked + .hum-button > span::after {
+    transition: 1s;
+    transform: rotate(-45deg); 
+    top: 0;
+}
+#ham-check:checked + .hum-button > span {
+    background-color: transparent;
+}
+.sub-menu{
+    list-style:none;
+    padding: 0;
+    margin: 0;
+    background-color: #000080;
+    display: none;
+    position: static;
+    width: 100%;
+    box-sizing: border;
+
+}
+.main-menu>li:checked .sub-menu{
+    display:block;
+}
+.sub-menu li a{
+    display:block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: antiquewhite;
+    transition: background-color 0.3s;
+}
+.sub-menu li a:hover{
+    background-color: #0000cd;
+}
+.main-menu>li>a{
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    caret-color: antiquewhite;
+}
+.main-menu>li>a:hover{
+    background-color: #0000cd;
+}
+.submenu-toggle {
+    display: none;
+}
+.sub-menu {
+    display: none;
+}
+.submenu-toggle:checked ~ .sub-menu {
+    display: block;
+}
+.menu-item-with-submenu {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: antiquewhite;
+    cursor: pointer;
+}
