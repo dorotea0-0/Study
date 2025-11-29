@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border: 2px solid black;
+    width: max-content;
+}
+
+.item {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+.trigger {
+    display: none;
+}
+
+.box {
+    width: 25px;
+    height: 25px;
+    border: 2px solid black;
+    transition: transform 0.2s;
+}
+.trigger:checked + .box {
+    animation: toCheckmark 0.4s forwards;
+}
+@keyframes toCheckmark {
+    0% {
+        border: 2px solid black;
+        transform: rotate(0deg);
+    }
+    100% {
+        border-top: none;
+        border-right: none;
+        border-left: 3px solid #007bff;
+        border-bottom: 3px solid #007bff;
+        transform: rotate(-45deg);
+        width: 14px;
+        height: 8px;
+    }
+}
