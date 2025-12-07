@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href=".css/з2.css" type="text/css">
+    <script>
+        function createAndColorTable() {
+            const table = document.createElement('table');
+
+            for (let i = 0; i < 3; i++) {
+                const row = document.createElement('tr');
+                for (let j = 0; j < 3; j++) {
+                    const cell = document.createElement('td');
+                    row.appendChild(cell);
+                }
+                table.appendChild(row);
+            }
+
+            const usersDiv = document.querySelector('div');
+            usersDiv.insertAdjacentElement('afterend', table);
+
+            for (let i = 0; i < 3; i++) {
+                table.rows[i].cells[i].style.backgroundColor = 'yellow';
+            }
+        }
+
+        window.onload = createAndColorTable;
+    </script>
+</head>
+<body>
+    <div>Пользователи:</div> 
+    <ul class="my-list"> 
+      <li id="first">Федор</li> 
+      <li>Вероника</li> 
+    </ul> 
+</body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <div>Пользователи:</div> 
+    <ul class="my-list"> 
+      <li id="first">Федор</li> 
+      <li>Вероника</li> 
+    </ul> 
+    <script>
+        const myList = document.querySelector('.my-list');
+        const listItems = myList.querySelectorAll('li');
+        const secondItem = listItems[1];
+        console.log("Второй элемент списка:", secondItem.textContent);
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const labelsInTable = document.querySelectorAll('#age-table label');
+            const firstCell = document.querySelector('#age-table td:first-child');
+            const secondForm = document.forms[1];
+            const searchForm = document.forms.search;
+            const firstInputInSearch = searchForm.querySelector('input[type="text"]');
+            const info0Input = document.querySelector('input[name="info[0]"]');
+            const info0InSearchPerson = document.forms['search-person'].querySelector('input[name="info[0]"]');
+
+            console.log(labelsInTable);
+            console.log(firstCell);
+            console.log(secondForm);
+            console.log(searchForm);
+            console.log(firstInputInSearch);
+            console.log(info0Input);
+            console.log(info0InSearchPerson);
+        });
+    </script>
+</head>
+<body>
+  <form name="search">
+    <label>Поиск по имени:
+      <input type="text" name="search">
+    </label>
+    <input type="submit" value="Найти!">
+  </form>
+
+  <hr>
+
+  <form name="search-person">
+    Поиск по персонам:
+    <table id="age-table">
+      <tbody>
+        <tr>
+          <td>Возраст:</td>
+          <td id="age-list">
+            <label>
+              <input type="radio" name="age" value="young">До 18</label>
+            <label>
+              <input type="radio" name="age" value="mature">18-50</label>
+            <label>
+              <input type="radio" name="age" value="senior">Старше 50</label>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Информация:</td>
+          <td>
+            <input type="text" name="info[0]">
+            <input type="text" name="info[1]">
+            <input type="text" name="info[2]">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <input type="submit" value="Найти!">
+  </form>
+</body>
+</html>
