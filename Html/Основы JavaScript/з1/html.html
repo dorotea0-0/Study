@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Точные квадраты</title>
+        <link rel="stylesheet" href="./css/css.css">
+    </head>
+    <body>
+        <input type="number" id="n" placeholder="Введите N">
+        <button onclick="find()">Найти</button>
+        <div id="result"></div>
+
+        <script>
+            function find() {
+            const n = Number(document.getElementById('n').value);
+            const result = document.getElementById('result');
+
+            if (isNaN(n) || n < 1) {
+                result.textContent = 'Введите корректное натуральное число.';
+                return;
+            }
+
+            const squares = [];
+            for (let i = 1; i * i <= n; i++) {
+                squares.push(i * i);
+            }
+
+            result.textContent = squares.length > 0
+                ? squares.join(', ')
+                : 'Точных квадратов нет.';
+            }
+        </script>
+    </body>
+</html>

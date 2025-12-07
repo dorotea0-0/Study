@@ -1,0 +1,11 @@
+body {
+  font-family: sans-serif;
+  margin: 20px;
+}
+input, button {
+  padding: 5px;
+  margin-right: 10px;
+}
+#result {
+  margin-top: 15px;
+}

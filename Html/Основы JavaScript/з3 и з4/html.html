@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Задача 3</title>
+</head>
+<body>
+    <h3>Является ли число степенью двойки?</h3>
+    <input type="number" id="nInput" placeholder="Введите натуральное число N" min="1">
+    <button onclick="Two()">Проверить</button>
+    <div id="resultPower"></div>
+
+    <h3>Преобразовать в camelize</h3>
+    <input type="text" id="strInput" placeholder="Введите строку">
+    <button onclick="Camelize()">Преобразовать</button>
+    <div id="resultCamel"></div>
+
+    <script>
+        function Two() {
+            const n = Number(document.getElementById('nInput').value);
+            const result = document.getElementById('resultPower');
+
+            if (isNaN(n) || n <= 0 || !Number.isInteger(n)) {
+                result.textContent = 'Введите натуральное число.';
+                return;
+            }
+
+            if (n > 0 && (n & (n - 1)) === 0) {
+                result.textContent = 'YES';
+            } else {
+                result.textContent = 'NO';
+            }
+        }
+
+        function tocamelize(str) {
+            return str
+                .split('-')
+                .map((word, index) => {
+                    if (index === 0) {
+                        return word;
+                    } else {
+                        return word.charAt(0).toUpperCase() + word.slice(1);
+                    }
+                })
+                .join('');
+        }
+
+        function Camelize() {
+            const input = document.getElementById('strInput').value;
+            const resultv = document.getElementById('resultCamel');
+
+            if (!input) {
+                resultv.textContent = 'Введите строку.';
+                return;
+            }
+
+            const result = tocamelize(input);
+            resultv.textContent = result;
+        }
+    </script>
+
+</body>
+</html>

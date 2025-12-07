@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Задание 2</title>
+        <link rel="stylesheet" href="./css/css.css">
+    </head>
+    <body>
+        <input type="number" id="n" placeholder="Введите от">
+        <input type="number" id="m" placeholder="Введите до">
+        <button onclick="find()">Найти</button>
+        <div id="result"></div>
+
+        <script>
+            function find() {
+            const n = Number(document.getElementById('n').value);
+            const m = Number(document.getElementById('m').value);
+            const result = document.getElementById('result');
+
+            if (isNaN(n) || isNaN(m) ||  n>m ) {
+                result.textContent = 'Введите корректный диапазон.';
+                return;
+            }
+
+            let sum=0 
+            let coun=0
+            for (let i = n; i <= m; i++) {
+                if (i%3==0){
+                    sum+=i
+                    coun++
+                }
+            }
+
+            if (coun > 0) {
+                    const average = sum / coun;
+                    result.textContent = average;
+            } else {
+                    result.textContent = 'Нет чисел, делящихся на 3.';
+            
+            }
+        }
+        </script>
+    </body>
+</html>
