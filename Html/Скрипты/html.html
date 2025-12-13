@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Список с темами</title>
+    <link rel="stylesheet" href="./css/css.css">
+</head>
+<body class="light">
+
+    <div class="list-container">
+        <h2 id="header">Заголовок</h2>
+        <ul id="myList"></ul>
+        <button id="themeBtn">Сменить тему</button>
+    </div>
+
+    <script>
+        let title = prompt("Введите заголовок списка:");
+        if (title == null || title.trim() == "") {
+            title = "Мой список";
+        }
+        document.getElementById("header").textContent = title;
+
+        let list = document.getElementById("myList");
+        let items = [];
+
+        while (true) {
+            let item = prompt("Введите пункт списка (Отмена или пусто — завершить):");
+            if (item === null || item.trim() === "") break;
+            items.push(item.trim());
+        }
+
+        items.forEach(text => {
+            let li = document.createElement("li");
+            li.textContent = text;
+            list.appendChild(li);
+        });
+
+        let btn = document.getElementById("themeBtn");
+        let body = document.body;
+
+        btn.onclick = function() {
+            if (body.className == "light") {
+                body.className = "dark";
+                btn.textContent = "Светлая тема";
+            } else {
+                body.className = "light";
+                btn.textContent = "Тёмная тема";
+            }
+        };
+
+        document.getElementById("header").onclick = function() {
+            btn.click();
+        };
+    </script>
+</body>
+</html>

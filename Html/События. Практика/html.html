@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Выпадающие фотографии</title>
+    <link rel="stylesheet" href="./css/css.css">
+</head>
+<body>
+    <h1>Фотографии</h1>
+
+    <div class="photo-container">
+        <div class="photo-title" onmousedown="showPhoto('photo1')" onmouseup="hidePhoto()">Показать фото 1</div>
+        <img id="photo1" class="photo-image" src="photo/1.jpg" alt="Фото 1">
+    </div>
+
+    <div class="photo-container">
+        <div class="photo-title" onmousedown="showPhoto('photo2')" onmouseup="hidePhoto()">Показать фото 2</div>
+        <img id="photo2" class="photo-image" src="photo/2.jpg" alt="Фото 2">
+    </div>
+
+    <div class="photo-container">
+        <div class="photo-title" onmousedown="showPhoto('photo3')" onmouseup="hidePhoto()">Показать фото 3</div>
+        <img id="photo3" class="photo-image" src="photo/3.jpg" alt="Фото 3">
+    </div>
+
+    <script>
+        let currentVisiblePhoto = null;
+
+        function showPhoto(photoElementId) {
+            if (currentVisiblePhoto) {
+                currentVisiblePhoto.style.display = 'none';
+            }
+            const photoElement = document.getElementById(photoElementId);
+            if (photoElement) {
+                photoElement.style.display = 'block';
+                currentVisiblePhoto = photoElement;
+            }
+        }
+
+        function hidePhoto() {
+            if (currentVisiblePhoto) {
+                currentVisiblePhoto.style.display = 'none';
+                currentVisiblePhoto = null;
+            }
+        }
+    </script>
+</body>
+</html>
