@@ -1,0 +1,38 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Таблица с изменением цвета</title>
+    <link rel="stylesheet" href="./css/css.css">
+</head>
+<body>
+    <table id="colorTable">
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td></tr>
+    </table>
+
+    <script>
+        const table = document.getElementById('colorTable');
+        
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        
+        table.addEventListener('click', function(event) {
+            if (event.target.tagName === 'TD') {
+                event.target.style.backgroundColor = getRandomColor();
+                event.target.classList.add('changed');
+                setTimeout(() => {
+                    event.target.classList.remove('changed');
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>

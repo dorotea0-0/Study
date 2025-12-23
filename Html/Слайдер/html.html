@@ -1,0 +1,73 @@
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Котомемы — 23.12.2025</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+    <h2>Котомемы – 23 декабря 2025</h2>
+
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <img src="photo/1.webp" alt="Кот с удивлённым лицом" class="img">
+                <div class="cap">Ого... Что это за чудо?</div>
+            </div>
+            <div class="slide">
+                <img src="photo/2.webp" alt="Кот с розой" class="img">
+                <div class="cap">Я твой кавалер 😘</div>
+            </div>
+            <div class="slide">
+                <img src="photo/3.jpg" alt="Кот с пистолетом" class="img">
+                <div class="cap">Не шевелись. Я серьёзен.</div>
+            </div>
+            <div class="slide">
+                <img src="photo/4.webp" alt="Кот на клавиатуре" class="img">
+                <div class="cap">Хоспаде, куда я жмав</div>
+            </div>
+            <div class="slide">
+                <img src="photo/5.webp" alt="Кот с прищуром" class="img">
+                <div class="cap">Ну ты и дурачок...</div>
+            </div>
+            <div class="slide">
+                <img src="photo/6.webp" alt="Кот перед зеркалом" class="img">
+                <div class="cap">с проснутием!</div>
+            </div>
+            <div class="slide">
+                <img src="photo/7.webp" alt="Кот с оскалом" class="img">
+                <div class="cap">Я не злюсь... Я просто кот.</div>
+            </div>
+        </div>
+        <button class="btn prev">←</button>
+        <button class="btn next">→</button>
+    </div>
+
+    <script>
+        let i = 0;
+        const wrap = document.querySelector('.slides');
+        const items = document.querySelectorAll('.slide');
+        const prev = document.querySelector('.prev');
+        const next = document.querySelector('.next');
+
+        function pos() {
+            const w = items[0].offsetWidth + 16;
+            wrap.style.transform = `translateX(-${i * w}px)`;
+        }
+
+        function move(d) {
+            const vis = Math.floor(wrap.offsetWidth / (items[0].offsetWidth + 16));
+            const max = items.length - vis;
+
+            if (d === 1 && i < max) i++;
+            else if (d === -1 && i > 0) i--;
+
+            pos();
+        }
+
+        prev.onclick = () => move(-1);
+        next.onclick = () => move(1);
+    </script>
+
+</body>
+</html>

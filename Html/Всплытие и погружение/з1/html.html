@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Список</title>
+        <link rel="stylesheet" href="./css/css.css">
+    </head>
+    <body>
+        <div class="cnt">
+        <ul class="lst">
+        <li>
+            Уровень 1 - Элемент 1
+            <ul>
+                <li>
+                    Уровень 2 - Элемент 1.1
+                    <ul>
+                        <li>Уровень 3 - Элемент 1.1.1</li>
+                        <li>Уровень 3 - Элемент 1.1.2</li>
+                    </ul>
+                </li>
+                <li>
+                    Уровень 2 - Элемент 1.2
+                    <ul>
+                        <li>Уровень 3 - Элемент 1.2.1</li>
+                        <li>Уровень 3 - Элемент 1.2.2</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            Уровень 1 - Элемент 2
+            <ul>
+                <li>
+                    Уровень 2 - Элемент 2.1
+                    <ul>
+                        <li>Уровень 3 - Элемент 2.1.1</li>
+                        <li>Уровень 3 - Элемент 2.1.2</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        </ul>
+        </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const els = document.querySelectorAll('.lst li');
+        els.forEach(e => {
+        e.addEventListener('click', ev => {
+            ev.stopPropagation();
+            e.classList.toggle('act');
+            });
+        });
+    });
+    </script>
+    </body>
+</html>
