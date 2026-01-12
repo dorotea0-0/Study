@@ -1,0 +1,130 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    padding: 20px;
+    margin: 0;
+}
+
+.heart {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #d4a5a5;
+    font-size: 24px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.container img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.option {
+    margin: 20px 0;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.option label:first-of-type {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.option input[type="radio"] {
+    display: none;
+}
+
+.option label[for] {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.option input:checked+label[for] {
+    border-color: #9c27b0;
+    color: #9c27b0;
+}
+
+.option select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+.option select:focus {
+    outline: none;
+    border-color: #9c27b0;
+}
+
+.actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.qty {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.qty button {
+    background: #f5f5f5;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.qty span {
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+.cart {
+    background: #9c27b0;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.more {
+    width: 100%;
+    background: #f5f5f5;
+    color: #9c27b0;
+    border: 1px solid #ccc;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 10px;
+}
